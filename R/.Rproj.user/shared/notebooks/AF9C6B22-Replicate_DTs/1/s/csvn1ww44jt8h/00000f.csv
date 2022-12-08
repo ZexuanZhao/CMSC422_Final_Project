@@ -1,0 +1,3 @@
+"0","data %>% "
+"0","  ggplot(aes(x = dgp, y = dep, color = log(gep))) + "
+"0","    geom_point()"

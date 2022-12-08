@@ -1,0 +1,4 @@
+"0","pred %>% "
+"0","  group_by(dgp, dep) %>% "
+"0","  summarize(n = n())"
+"2","`summarise()` has grouped output by 'dgp'. You can override using the `.groups` argument."

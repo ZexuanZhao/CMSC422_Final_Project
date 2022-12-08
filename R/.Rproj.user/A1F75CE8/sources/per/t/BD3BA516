@@ -1,0 +1,28 @@
+{
+    "id": "BD3BA516",
+    "path": "~/Programs/CMSC422/FinalProject/R/data_preprocessing.Rmd",
+    "project_path": "data_preprocessing.Rmd",
+    "type": "r_markdown",
+    "hash": "2775585927",
+    "contents": "",
+    "dirty": false,
+    "created": 1670355343933.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "61,25",
+        "scrollLine": "61",
+        "last_setup_crc32": "693D8D781613b0ba"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1670426132,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1670426132765,
+    "read_only": false,
+    "read_only_alternatives": []
+}

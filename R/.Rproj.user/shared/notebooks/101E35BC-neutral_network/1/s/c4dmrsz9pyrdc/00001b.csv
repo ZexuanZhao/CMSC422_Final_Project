@@ -1,0 +1,6 @@
+"0","sig_level <- 0.05"
+"0","Y <- data_hot_encoded %>% "
+"0","  #mutate(pmtp = ifelse(pmtp > sig_level, FALSE, TRUE) ) %>% "
+"0","  mutate(dgp = ifelse(dgp > sig_level, FALSE, TRUE) %>% as.numeric()) %>% "
+"0","  mutate(dep = ifelse(dep > sig_level, FALSE, TRUE) %>% as.numeric()) %>% "
+"0","  select(dgp, dep)"
