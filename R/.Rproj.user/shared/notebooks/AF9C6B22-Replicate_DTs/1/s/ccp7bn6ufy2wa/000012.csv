@@ -1,5 +1,0 @@
-"0","data_sig_level_transformed <- data_sig_level %>% "
-"0","  mutate(y = ifelse(dgp & dep, ""both"","
-"0","                    ifelse(dgp, ""geo"","
-"0","                           ifelse(dep, ""env"", ""none""))) %>% as.factor()) %>% "
-"0","  select(-dgp, -dep, -pmtp)"

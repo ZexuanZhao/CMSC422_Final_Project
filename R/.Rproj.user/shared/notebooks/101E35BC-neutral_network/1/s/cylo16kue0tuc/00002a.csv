@@ -1,6 +1,0 @@
-"0","data %>% 
-  mutate(dgp_p = dgp > 0.05, dgp_bh_p = dgp_bh > 0.05) %>% 
-  group_by(dgp_p, dgp_bh_p) %>% 
-  summarize(n = n())
-"
-"2","`summarise()` has grouped output by 'dgp_p'. You can override using the `.groups` argument."

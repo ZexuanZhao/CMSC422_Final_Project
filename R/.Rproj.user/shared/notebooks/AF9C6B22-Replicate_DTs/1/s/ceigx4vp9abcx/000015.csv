@@ -1,5 +1,0 @@
-"0",""
-"0","data %>% "
-"0","  ggplot(aes(x = gep)) +"
-"0","    geom_histogram() +"
-"0","    scale_x_log10()"
