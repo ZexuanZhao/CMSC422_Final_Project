@@ -1,9 +1,0 @@
-Taxonomy	20.05987569
-Metabolism	20.10799972
-Gene type	21.40916127
-Habit	24.21522516
-Land cover	27.78126163
-Length of latitude	53.86972278
-Min-distance equator	55.23302988
-Area	58.29873001
-Mid-point latitude	58.5610228

@@ -36,7 +36,7 @@ The followings are codes modified from `scripts_from_original_paper/7_Random_for
 ## Load CSV data and exclude redundant variables
 
 ```{r}
-data <- read_csv("AppendixS1.csv") %>% 
+data <- read_csv("../data/AppendixS1.csv") %>% 
 # Exclude low-level taxonomic variables
   select(-Species, -Genus, -Family, -Order) %>% 
 # Exclude redundant statistical variables
@@ -259,9 +259,10 @@ summary_accuracy_plot <- summary_accuracy %>%
     geom_bar(stat = "identity",
              position = "dodge") +
   facet_grid(. ~ balanced) +
-  theme_bw()
+  theme_bw() +
+  xlab(NULL)
 summary_accuracy_plot
 ggsave("../report/img/summary_accuracy_plot.png", 
        plot = summary_accuracy_plot, 
-       width = 6, height = 4.5, units = "in")
+       width = 4, height = 3, units = "in")
 ```

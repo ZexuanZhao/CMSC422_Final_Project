@@ -1,9 +1,0 @@
-data<-read.table("~/Dropbox/IBDE/NatureMS/RFbarplot.txt", sep="\t")
-data
-cols<-c("black", "white", "darkgreen", "white", "white", "white", "grey", "grey", "grey", "grey")#
-pdf("rf_plot.pdf")#
-par(mar=c(2, 10, 2, 0) + 1)#
-barplot(data$V2, names = data$V1, las=2,col=cols, main="Mean Decrease in Accuracy", horiz=TRUE, space=1, xlim=c(0,40))#
-legend(21,10, c("Geographic", "Intrinsic", "Land cover", "Sampling"), col=c("grey", "black", "darkgreen", "black"), pch=c(15,0,15,15), cex=1.5)#
-dev.off()
-getwd()

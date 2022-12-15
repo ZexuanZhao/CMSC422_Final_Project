@@ -1,0 +1,79 @@
+---
+title: "Plots for NN"
+author: "Zexuan Zhao"
+date: "2022-12-15"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## Confusion matrix
+
+```{r}
+confusion_tb_dgp <- tibble(type = c("TP", "FN", "FP", "TN"),
+                           rate = c(0.00183066, 0.99816934, 0.00165975, 0.99834025))
+confusion_tb_dep <- tibble(type = c("TP", "FN", "FP", "TN"),
+                           rate = c(0.00327332, 0.99672668, 0.00125451, 0.99874549))
+confusion_tb <- 
+  bind_rows(confusion_tb_dgp %>% mutate(p = "dgp"),
+            confusion_tb_dep %>% mutate(p = "dep"))
+confusion_tb
+```
+
+```{r}
+confusion_plot <- confusion_tb %>% 
+  ggplot(aes(x = type, y = rate, fill = type)) +
+    geom_bar(stat = "identity") +
+  facet_grid(. ~ p) +
+  theme_bw() +
+  xlab(NULL) +
+  theme(legend.position = "none")
+confusion_plot
+ggsave("../report/img/confusion_NN_plot.png", 
+       plot = confusion_plot, 
+       width = 4, height = 3, units = "in")
+```
+
+## Importance
+
+```{r}
+importance_dgp <- tibble(var = c("min_lon", "max_lon", "area", "elevation_mean", "abs_mid_lat") %>% as.factor(),
+                         MDC = c(0.02918962297472194, 0.028906181329495212, 0.013072665926972649, 0.01205393265187285, 0.006413904804573128)) %>% 
+  mutate(p = "dgp")
+importance_dep <- tibble(var = c("max_lon", "min_lon", "area", "elevation_mean", "min_lat") %>% as.factor(),
+                         MDC = c(0.046906361732080126, 0.035510337567239036, 0.034563848770119254, 0.015657339706638407, 0.00877845562464602)) %>% 
+  mutate(p = "dep")
+importance_NN <- bind_rows(importance_dgp, importance_dep)
+```
+
+```{r}
+importance_dgp_plot <- importance_dgp %>% 
+  ggplot(aes(x = reorder(var, -MDC), y = MDC)) +
+    geom_bar(stat = "identity") +
+  facet_grid(. ~ p) +
+  theme_bw() +
+  coord_flip()+
+  xlab(NULL) +
+  theme(legend.position = "none")
+importance_dgp_plot
+ggsave("../report/img/importance_dgp_plot.png", 
+       plot = importance_dgp_plot, 
+       width = 4, height = 3, units = "in")
+```
+```{r}
+importance_dep_plot <- importance_dep %>% 
+  ggplot(aes(x = reorder(var, -MDC), y = MDC)) +
+    geom_bar(stat = "identity") +
+  facet_grid(. ~ p) +
+  theme_bw() +
+  coord_flip()+
+  xlab(NULL) +
+  theme(legend.position = "none")
+importance_dep_plot
+ggsave("../report/img/importance_dep_plot.png", 
+       plot = importance_dep_plot, 
+       width = 4, height = 3, units = "in")
+```
